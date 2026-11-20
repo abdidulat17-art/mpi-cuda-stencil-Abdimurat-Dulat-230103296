@@ -1,0 +1,201 @@
+{
+  "git_username": "abdidulat17-art",
+  "instance_seed": 5391446366016483103,
+  "host": {
+    "cpu_model": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "cpu_sig": "AMD64::Intel64 Family 6 Model 186 Stepping 2, GenuineIntel::12",
+    "logical_cores": 12,
+    "line_size": 64,
+    "affinity_supported": false,
+    "core_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "physical_cores_found": null,
+    "python": "3.14.8",
+    "numpy": "2.5.3",
+    "gil_enabled": true
+  },
+  "numba_version": "0.68.0",
+  "num_threads": 4,
+  "iterations_per_thread": 60000000,
+  "expected_final_values": [
+    "5700000000",
+    "3420000000",
+    "14700000000",
+    "12660000000"
+  ],
+  "results": {
+    "stride_1": {
+      "layout": "Layout A: Contiguous (8 B)",
+      "stride_elements": 1,
+      "stride_bytes": 8,
+      "elapsed_ns": 762423900,
+      "per_thread_ns": [
+        753550500,
+        762262300,
+        753240300,
+        744564100
+      ],
+      "parallelism_ratio": 3.953,
+      "voluntary_ctx_switches": null,
+      "involuntary_ctx_switches": null,
+      "final_values": [
+        5700000000,
+        3420000000,
+        14700000000,
+        12660000000
+      ],
+      "buffer_base_mod_64": 0,
+      "all_runs_elapsed_ns": [
+        762423900,
+        763085300,
+        747299300
+      ],
+      "ns_per_update": 12.7071
+    },
+    "stride_4": {
+      "layout": "Layout B: Half-Line (32 B)",
+      "stride_elements": 4,
+      "stride_bytes": 32,
+      "elapsed_ns": 568087200,
+      "per_thread_ns": [
+        551033300,
+        547045000,
+        567949300,
+        564278900
+      ],
+      "parallelism_ratio": 3.926,
+      "voluntary_ctx_switches": null,
+      "involuntary_ctx_switches": null,
+      "final_values": [
+        5700000000,
+        3420000000,
+        14700000000,
+        12660000000
+      ],
+      "buffer_base_mod_64": 0,
+      "all_runs_elapsed_ns": [
+        560570300,
+        575862000,
+        568087200
+      ],
+      "ns_per_update": 9.4681
+    },
+    "stride_8": {
+      "layout": "Layout C: Line-Padded (64 B)",
+      "stride_elements": 8,
+      "stride_bytes": 64,
+      "elapsed_ns": 363550600,
+      "per_thread_ns": [
+        356377000,
+        359467900,
+        363398600,
+        358216200
+      ],
+      "parallelism_ratio": 3.954,
+      "voluntary_ctx_switches": null,
+      "involuntary_ctx_switches": null,
+      "final_values": [
+        5700000000,
+        3420000000,
+        14700000000,
+        12660000000
+      ],
+      "buffer_base_mod_64": 0,
+      "all_runs_elapsed_ns": [
+        371786000,
+        363156300,
+        363550600
+      ],
+      "ns_per_update": 6.0592
+    },
+    "stride_16": {
+      "layout": "Layout D: Prefetch-Safe (128 B)",
+      "stride_elements": 16,
+      "stride_bytes": 128,
+      "elapsed_ns": 356947800,
+      "per_thread_ns": [
+        353537700,
+        353794100,
+        351554300,
+        356805400
+      ],
+      "parallelism_ratio": 3.966,
+      "voluntary_ctx_switches": null,
+      "involuntary_ctx_switches": null,
+      "final_values": [
+        5700000000,
+        3420000000,
+        14700000000,
+        12660000000
+      ],
+      "buffer_base_mod_64": 0,
+      "all_runs_elapsed_ns": [
+        356477600,
+        356947800,
+        360021000
+      ],
+      "ns_per_update": 5.9491
+    },
+    "private": {
+      "layout": "Thread-local register privatization",
+      "stride_elements": 8,
+      "elapsed_ns": 60828100,
+      "per_thread_ns": [
+        60462300,
+        60732400,
+        59437600,
+        59630800
+      ],
+      "parallelism_ratio": 3.95,
+      "voluntary_ctx_switches": null,
+      "involuntary_ctx_switches": null,
+      "final_values": [
+        5700000000,
+        3420000000,
+        14700000000,
+        12660000000
+      ],
+      "buffer_base_mod_64": 0,
+      "all_runs_elapsed_ns": [
+        61457400,
+        60828100,
+        60423800
+      ],
+      "ns_per_update": 1.0138
+    }
+  },
+  "slowdown_stride1_vs_stride8": 2.097,
+  "ratio_stride8_vs_stride16": 1.018,
+  "gil_experiment": {
+    "iterations_per_thread": 1000000,
+    "gil_enabled": true,
+    "threads_1_elapsed_ns": 44095900,
+    "threads_4_elapsed_ns": 196183600,
+    "slowdown_4_vs_1": 4.449
+  },
+  "llvm_ir": {
+    "signature": "(Array(uint64, 1, 'C', False, aligned=True), int64, int64, uint64)",
+    "kernel_symbol": "noundef i32 @_ZN8__main__25worker_strided_accumulateB2v1B40c8tJTIeFIjxB2IKSgI4CrvQClQZ6FcpCShpgEU0AE5ArrayIyLi1E1C7mutable7alignedExxy(ptr noalias writeonly captures(none) %retptr, ptr noalias readnon",
+    "store_i64_count": 5,
+    "load_i64_count": 10,
+    "lshr_i64_present": true,
+    "shift_by_63_present": true,
+    "python_object_fallback": false,
+    "nrt_calls": 0
+  },
+  "checks": {
+    "bit_exact_parity_all_layouts": true,
+    "llvm_native_i64_stores": true,
+    "full_iteration_count": true,
+    "thread_count_is_4": true,
+    "cache_line_size_detected": true,
+    "buffers_64B_aligned": true,
+    "nogil_parallel_execution": true
+  },
+  "verification_passed": true,
+  "manifest_sha256": "a39c74895e1e382a1d568ac5752ab921b998e96060e5fe01838a51a0cffddc4f"
+}
