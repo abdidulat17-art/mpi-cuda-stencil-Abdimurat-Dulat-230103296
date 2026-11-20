@@ -1,0 +1,64 @@
+{
+  "GITHUB_USERNAME": "REPLACE_WITH_YOUR_GITHUB_USERNAME",
+  "gpu_uuid": "GPU-9840042a-5f7d-b600-ab93-993cd5ce3a37",
+  "instance_seed": 17143035173039001118,
+  "mpi_ranks": 4,
+  "process_grid": [
+    2,
+    2
+  ],
+  "global_grid": [
+    512,
+    512
+  ],
+  "local_padded_shape": [
+    258,
+    258
+  ],
+  "steps": 400,
+  "dx": 0.001949317738791423,
+  "kappa_max": 0.23999962497115201,
+  "dt_max": 3.9581724838358046e-06,
+  "dt": 1.9790862419179023e-06,
+  "energy_steps": [
+    0,
+    100,
+    200,
+    300,
+    400
+  ],
+  "energy_trace_overlapped": [
+    0.07073764223294599,
+    0.07073504050587248,
+    0.07073291911792184,
+    0.07073086575142042,
+    0.07072882574050766
+  ],
+  "energy_trace_serialized": [
+    0.07073764223294599,
+    0.07073504050587248,
+    0.07073291911792184,
+    0.07073086575142042,
+    0.07072882574050766
+  ],
+  "residual_trace_overlapped": [
+    0.0,
+    0.012832252972400215,
+    0.01247740807093575,
+    0.012138726849037922,
+    0.011815123909791917
+  ],
+  "energy_monotone_non_increasing": true,
+  "serialized_ms": 1658.086268,
+  "overlapped_ms": 2032.804045,
+  "serialized_cuda_event_ms": 1656.729775428772,
+  "overlapped_cuda_event_ms": 2032.6482882499695,
+  "parity_max_diff": 0.0,
+  "parity_passed": true,
+  "ptx_counts": {
+    "st.shared.f64": 5,
+    "ld.shared.f64": 5,
+    "bar.sync": 1
+  },
+  "ptx_audit_passed": true
+}
